@@ -1,1 +1,95 @@
+/* 震动动画 */
+.shake {
+    animation: shake 0.5s;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
 
+@keyframes shake {
+    10%, 90% {
+        transform: translateX(-2px);
+    }
+    20%, 80% {
+        transform: translateX(3px);
+    }
+    30%, 50%, 70% {
+        transform: translateX(-5px);
+    }
+    40%, 60% {
+        transform: translateX(5px);
+    }
+}
+
+/* 错误提示样式 */
+.error-message {
+    color: #ff4444 !important;
+    font-weight: bold;
+}
+
+.input-error {
+    border-color: #ff4444 !important;
+    background: #fffafa !important;
+}
+
+.password-error,
+.captcha-error,
+.validUsername-text {
+    font-size: 12px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+/* 验证码错误特殊定位 */
+.captcha-item {
+    position: relative;
+}
+
+.captcha-error {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+}
+
+.error-tip {
+    margin-top: 8px;
+    color: #ff4d4f;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.validUsername-text {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.validUsername-text:not(:empty) {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.validUsername-text[data-valid="true"] {
+    color: #52c41a;
+    background: #f6ffed;
+    border: 1px solid #b7eb8f;
+}
+
+.validUsername-text[data-valid="false"] {
+    color: #ff4d4f;
+    background: #fff2f0;
+    border: 1px solid #ffccc7;
+}

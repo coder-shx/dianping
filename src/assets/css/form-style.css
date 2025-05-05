@@ -1,0 +1,333 @@
+.auth-page {
+    display: flex;
+    height: 100vh;
+}
+
+.background-section {
+    flex: 0 0 65%;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.form-section {
+    width: 450px;  /* 增加表单区域宽度 */
+    background: rgba(255, 255, 255, 0.98); /* 更清晰的背景 */
+    padding: 50px;  /* 增加内边距 */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-switch {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.auth-switch h2 {
+    flex: 1;
+    text-align: center;
+    font-size: 1.8rem;  /* 增大切换按钮文字 */
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.auth-switch h2.active {
+    color: #4a90e2;  /* 更现代的主题色 */
+    border-color: #4a90e2;
+    transform: scale(1.05);  /* 添加轻微放大效果 */
+}
+
+.form-item {
+    position: relative;
+    margin-bottom: 25px;
+    transform: translateZ(0);
+}
+
+.form-item input {
+    width: 100%;
+    height: 55px;  /* 增加输入框高度 */
+    padding: 10px 0 10px 40px; /* 左右留出图标空间 */
+    font-size: 1.1rem;  /* 增大输入框文字 */
+    border: 2px solid #eef2f7;  /* 更细腻的边框 */
+    border-radius: 8px;  /* 更圆润的边角 */
+    transition: all 0.3s ease;
+    background: #f8fafc;  /* 柔和的背景色 */
+}
+
+/* 输入框聚焦效果 */
+input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    background-color: #fff;
+    transform: translateY(-1px);  /* 轻微上浮效果 */
+}
+
+.submit-btn {
+    width: 100%;
+    height: 55px;  /* 增加按钮高度 */
+    background: #4a90e2;  /* 更改为统一主题色 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;  /* 增大按钮文字 */
+    cursor: pointer;
+    text-transform: uppercase;  /* 大写字母 */
+    letter-spacing: 1px;  /* 增加字间距 */
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #357abd;
+    transform: translateY(-2px);  /* 悬浮上浮效果 */
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.agreement {
+    margin-top: 20px;
+    font-size: 0.9rem;  /* 调整协议文字大小 */
+    color: #666;
+}
+
+.agreement a {
+    color: #ff4444;
+}
+
+.footer-links {
+    margin-top: 40px;  /* 增加底部链接间距 */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 30px;
+}
+
+.footer-links a {
+    color: #666;
+    font-size: 0.95rem;  /* 增大底部链接文字 */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4a90e2;
+}
+
+.password-strength {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.password-strength-wrapper {
+    margin-top: 10px;
+}
+
+.validPassword-text {
+    color: #e74c3c;
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.validUsername-text {
+    color: #e74c3c;
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #95a5a6;
+}
+
+/* 调整强度条样式 */
+.strength-bar {
+    height: 6px;  /* 增加强度条高度 */
+    width: 60px;
+    margin-right: 0;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+}
+
+.strength-text {
+    display: block;
+    font-size: 0.9rem;
+    color: #95a5a6;
+    margin-top: 6px;
+    animation: fadeIn 0.3s ease;
+}
+
+.weak {
+    background: #ff4444;
+}
+
+.medium {
+    background: #ffbb33;
+}
+
+.strong {
+    background: #00C851;
+}
+
+.very-strong {
+    background: #00C851;
+}
+
+.captcha-item {
+    margin-bottom: 28px;
+}
+
+.captcha-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.captcha-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.captcha-input:focus {
+    border-color: #409eff;
+    outline: none;
+}
+
+.captcha-img {
+    width: 120px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+.captcha-img:hover {
+    transform: scale(1.03);
+}
+
+.social-icons i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* 密码切换按钮悬停效果 */
+.toggle-password:hover {
+    color: #3498db;
+}
+
+/* 新增错误提示样式 */
+.form-item::after {
+    content: attr(data-error);
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    color: #ff4444;
+    font-size: 12px;
+}
+
+/* 密码强度指示条容器 */
+.password-strength {
+    width: 250px;
+    height: 4px;
+    background: #eee;
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+/* 无效状态样式 */
+.strength-bar.invalid {
+    background-color: #ff4d4f !important;
+}
+
+.weak {
+    width: 30%;
+    background: #ff4444;
+}
+
+.medium {
+    width: 60%;
+    background: #ffbb33;
+}
+
+.strong {
+    width: 90%;
+    background: #00C851;
+}
+
+.very-strong {
+    width: 100%;
+    background: #00C851;
+}
+
+/* 左侧图标通用样式 */
+.icon-user,
+.icon-lock {
+    position: absolute;
+    left: 20px;
+    top: 36px;
+    transform: translateY(-50%);
+    font-size: 1.2rem;  /* 增大图标 */
+    color: #4a90e2;  /* 统一的主题色 */
+    pointer-events: none; /* 防止图标阻挡输入框点击 */
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.info-display {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
